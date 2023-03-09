@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>All Customers</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../static/assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../static/assets/Profile-Edit-Form-styles.css">
+        <link rel="stylesheet" href="../static/assets/Profile-Edit-Form.css">
+        <link rel="stylesheet" href="../static/home.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-dark navbar-expand-md bg-dark py-3">
+            <div class="container-fluid"><a class="navbar-brand d-flex align-items-center text-light"><span>Banking System</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-5"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-5">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="/"><span class="text-light fs-5 fw-bold">Home</span></a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/viewAllCustomers"><span class="text-light fs-5 fw-bold">Users</span></a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/transfer"><span class="text-light fs-5 fw-bold">Transfer</span></a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/transactions"><span class="text-light fs-5 fw-bold">Transactions</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        
+<div id="niakka" class="mt-4">
+        <div class="container profile profile-view pt-5 ml-5 w-100" id="profile">
+            <form  action="/transferAccount/{{ user }}" method="post">
+                <div class="row profile-row">
+                    <div class="mx-auto col-10 col-md-8 col-lg-6">
+                        <h1>Transfer Money</h1>
+                        <p class="hde">From: {{ user }}</p>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group mb-3"><p class="hde">To:</p><select class="holder" name="name" id="customers" required="">
+                                    <option value="" disabled selected>Select Customer</option>
+                                    {% for row in data %}
+                                       <option value="{{ row[1] }}">{{ row[1] }}(Current Balance: {{ row[5] }})</option>
+                                    {% endfor %}
+                                  </select></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group mb-3"><label class="form-label"><p class="hde">Amount</p></label><input class="form-control" type="text" name="amount" placeholder="Enter Amount" autocomplete="off" required="" class="holder"></div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-12 content-right"><a href='/viewAllCustomers' class="btn btn-danger form-btn">BACK</a>&nbsp<input class="btn btn-success" type="submit" value="Transfer"/></div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+        <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/assets/js/Profile-Edit-Form-profile.js"></script>
+        <script id="bs-live-reload" data-sseport="50127" data-lastchange="1678355532357" src="/js/livereload.js"></script>
+    </body>
+</html>

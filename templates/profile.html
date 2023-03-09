@@ -1,0 +1,66 @@
+<!<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../static/assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../static/assets/Profile-Edit-Form-styles.css">
+        <link rel="stylesheet" href="../static/assets/Profile-Edit-Form.css">
+        <link rel="stylesheet" href="../static/home.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-dark navbar-expand-md bg-dark py-3">
+            <div class="container-fluid"><a class="navbar-brand d-flex align-items-center text-light"><span>Banking System</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-5"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-5">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="/"><span class="text-light fs-5 fw-bold">Home</span></a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/viewAllCustomers"><span class="text-light fs-5 fw-bold">Users</span></a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/transfer"><span class="text-light fs-5 fw-bold">Transfer</span></a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/transactions"><span class="text-light fs-5 fw-bold">Transactions</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container profile profile-view pt-5 ml-5 w-100" id="profile">
+            <form>
+                <div class="row profile-row" id="niakka">
+                    <div class="mx-auto col-10 col-md-8 col-lg-6">
+                        <h1>{{ data[0][1] }}&nbsp Profile</h1>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group mb-3"><label class="form-label">Name</label><p class="holder">{{ data[0][1] }}</p></div>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group mb-3"><label class="form-label">Account Number</label><p class="holder">{{ data[0][2] }}</p></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group mb-3"><label class="form-label">Email</label><p class="holder">{{ data[0][3] }}</p></div>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group mb-3"><label class="form-label">Phone Number</label><p class="holder">{{ data[0][4] }}</p></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group mb-3"><label class="form-label">Current Balance</label><p class="holder">{{ data[0][5] }}</p></div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-12 content-right"><a href='/viewAllCustomers' class="btn btn-danger form-btn">BACK</a>&nbsp<a href='/transfer/{{ data[0][1] }}' class="btn btn-success">Select To Transfer</a></div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/assets/js/Profile-Edit-Form-profile.js"></script>
+        <script id="bs-live-reload" data-sseport="50127" data-lastchange="1678355532357" src="/js/livereload.js"></script>
+    </body>
+</html>

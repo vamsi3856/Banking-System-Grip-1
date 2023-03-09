@@ -1,0 +1,55 @@
+html{
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+body{
+    background-color:bisque;
+}
+#niakka{
+    height: auto;
+    width:75%;
+    background-color: whitesmoke;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    padding:20px;
+    box-shadow:10px solid black;
+}
+.nav{
+    background-color: #e3951f;
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index: 1;
+}
+.hde{
+    font-size: 20px;
+}
+.holder{
+    background-color: rgb(10, 10, 8);
+    padding: 8px;
+    margin:4px;
+    color:white;
+    border-radius: 10px ;
+}
+.nav ul{
+    display: flex;
+    float:right;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    padding: 0 20px;
+}
+.nav ul li{
+    padding: 8px 30px;
+    float:left;
+    color: #fff;
+    font-size: 20px;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}
